@@ -1,0 +1,97 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(245, 245, 245, 0.834);
+}
+.header_wrapper{
+  width: 100vw;
+  background-image: url(./assets/background.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+}
+.header{
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ flex-wrap: wrap;
+ width: 100vw;
+ height: 100vh;
+
+}
+.text{
+  width: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: red; */
+  text-align: center;
+  padding-top: 2rem;
+  flex-wrap: wrap;
+  /* width: 600px;
+  background-color: red; */
+
+}
+.text h1{
+  font-size: 30px;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.text h1 span{
+  border-radius: 50%;
+  padding-bottom: 0.5rem;
+}
+.text p{
+  font-family: Arial, Helvetica, sans-serif;
+  /* letter-spacing: 1px; */
+  margin-bottom: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+.signUp{
+  background-color: blue;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  color: white;
+  padding:0.5rem 1.6rem;
+  margin-right: 1rem;
+}
+.learn-more{
+  background-color: inherit;
+  color: blue;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem 1.6rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.box{
+  width: 400px;
+  height: 150px;
+  background-color: inherit;
+  border: 1px solid rgb(161, 161, 242);
+  border-radius: 10px;
+  margin-top: 2rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
