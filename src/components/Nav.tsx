@@ -1,6 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
-import {FaBars, FaTimes} from 'react-icons/Fa'
+import {FaBars, FaTimes} from 'react-icons/fa'
 import './Nav.css'
 
 const Nav = () => {
