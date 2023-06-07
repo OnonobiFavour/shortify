@@ -1,6 +1,6 @@
 .nav_bar{
     width: 100vw;
-    height: 40px;
+    /* height: 40px; */
     display: flex;
     align-items: center;
     position: fixed;
@@ -82,9 +82,11 @@ span{
         position: relative;
         transition: 0.5s height ease-in-out;
     }
-    /* .nav_bar.expanded{
-        background-color: red;
-    } */
+    .nav_bar.expande{
+        height: 200px;
+        background-color: blue;
+        color: white;
+    }
     .links{
        display: none;
     }
