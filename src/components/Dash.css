@@ -1,0 +1,110 @@
+.dashboard{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+.side_bar{
+    width: 200px;
+    height: 100vh;
+    color: white;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(12, 12, 211, 0.778);
+}
+h1{
+    text-align: center;
+    padding-top: 2rem;
+    border-radius: 10%;
+    padding-bottom: 1rem;
+    border-bottom: 4px solid white;
+}
+ol{
+    list-style-type: none;
+    padding-top: 4rem;
+    padding-left: 2rem;
+    font-size: 16px;
+}
+ol a{
+    text-decoration: none;
+    color: #fff;
+}
+ol a:hover{
+    background-color: white;
+    color: blue;
+    border-radius: 10px;
+    padding: 0.4rem 0.3rem;
+}
+main{
+    height: 100vh;
+    background-color: rgba(240, 230, 230, 0.701);
+    width: 100%;
+    padding: 0rem 1rem;
+    align-items: center;
+    font-family: sans-serif;
+}
+h2{
+    color: gray;
+}
+
+.input_wrapper{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Trim_inputs{
+    width: 450px;
+    padding-left: 2rem;
+    height: 40px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    display: flex;
+}
+.flex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 2rem;
+}
+.flex1{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 1rem;
+}
+.flex2{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+.trims{
+    width: 400px;
+    height: 100px;
+    border: 1px solid rgba(225, 225, 225, 0.949);
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: whitesmoke;
+    padding: 1rem 2rem;
+}
+.trims:hover{
+    background-color: rgba(21, 21, 203, 0.72);
+    color: #fff;
+    box-shadow: 10px solid gray;
+}
+.trims p{
+    color: rgba(14, 14, 213, 0.685);
+}
+.email{
+    background-color: blue;
+    width: 450px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 20px;
+    height: 40px;
+    margin-top: 6rem;
+}

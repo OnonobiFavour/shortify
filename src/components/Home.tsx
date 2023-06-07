@@ -1,5 +1,6 @@
-import React from 'react'
+// import {data } from './data'
 import { useNavigate } from 'react-router-dom'
+// import {data} from './data'
 import Nav from './Nav'
 
 
@@ -8,6 +9,7 @@ const Home = () => {
     const Handleclick = () =>{
         Navigate('/Signup')
     }
+ 
   return (
     <section className="header_wrapper">
         <Nav></Nav>
@@ -20,9 +22,25 @@ const Home = () => {
                     <button className="signUp" onClick={Handleclick}>sign Up</button>
                     <button className="learn-more">Learn more</button>
                 </div>
+
+                <div className="box">
+                    
+                </div>
             </div>
-           
         </header>
+
+        <h1>Why chosse <span>shortify</span></h1>
+        <div className="features">
+            {
+                // data.map((item:any)=>{
+                //     return(
+                //         <div className="feature_list">
+                //             <p>{item.feature}</p>
+                //         </div>
+                //     )
+                // })
+            }
+        </div>
     </section>
   )
 }

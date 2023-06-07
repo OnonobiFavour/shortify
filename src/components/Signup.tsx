@@ -1,10 +1,27 @@
-import React from 'react'
-import { useNavigate } from 'react-router-dom'
+import React, { useState } from 'react'
+import { useNavigate} from 'react-router-dom'
 import './Signup.css'
-const Signup = () => {
+
+interface SignupProps{
+    setUsername: React.Dispatch<React.SetStateAction<string>>;
+}
+const Signup: React.FC<SignupProps> = ({setUsername}) => {
+    // const [usernameInput, setUsernameInput] = useState("");
+    // const [passwordInput, setPasswordInput] = useState("");
+    // const history = uesHistory();
+
+    // Prevent default reload
+    // const handleSignup = (event: React.FormEvent<HTMLFormElement>) =>{
+    //     event.preventDefault();
+    //     setUsername(usernameInput);
+    //     history.push("/Dashboard")
+    // }
     const Navigate = useNavigate();
     const handleclick = ()=>{
         Navigate('/login')
+    }
+    const dashboard=()=>{
+        Navigate('/Dashboard')
     }
   return (
     <section className='section'>
@@ -12,11 +29,12 @@ const Signup = () => {
             <h2>Welcome!!!</h2>
 
             <form action="">
-                <input type="text" placeholder='name' />
-                <input type="password" placeholder='password' />
-                <input type = 'email' placeholder='email or phone'/>
+                <input type="text" className = 'input' placeholder='name' />
+                <input type="password" className = 'input' placeholder='password' />
+                <input type="password" className = 'input' placeholder='confirm password' />
+                <input type = 'email' className = 'input' placeholder='email or phone'/>
 
-                <input type="button" value="Submit" />
+                <input type="button" className = 'input' value="Confirm"  onClick={dashboard}/>
             </form>
         </div>
         <p>Already have an account? <button className='login2' onClick={handleclick}>login</button></p>

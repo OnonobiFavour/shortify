@@ -1,5 +1,6 @@
 .nav_bar{
     width: 100vw;
+    height: 40px;
     display: flex;
     align-items: center;
     position: fixed;
@@ -15,21 +16,31 @@ span{
 }
 .links{
     display: flex;
-    justify-content: space-between;
-    width: 320px;
-    /* margin-left: 1rem; */
+    justify-content: space-around;
+    width: 50%;
     text-decoration: none;
 }
 .links li{
     margin: 1.3rem;
     list-style-type: none;
-    font-size: 15px;
+    font-size: 18px;
 }
 .links li a{
     text-decoration: none;
-    color: black;
+    color: rgb(40, 37, 37);
+}
+.links li a:active{
+    color: blue;
+}
+.links li a:hover{
+    outline: 2px;
+    width: 20px;
+    border-bottom: 2px solid blue;
+    transition: ease-in-out;
+    transition: 1ms;
 }
 .login_nav{
+    margin-top: 0.4rem;
     padding-left: 1rem;
     display: flex;
     align-items: center;
@@ -50,9 +61,9 @@ span{
     border: 1px solid blue;
     border-radius: 20px;
     cursor: pointer;
-    padding: 0.5rem 1.5rem;
+    padding: 0.5rem 1.2rem;
     color: blue;
-    margin-left: 0.3rem;
+    margin-right: 0.3rem;
 }
 .Nav_btn_2{
     background-color: rgb(0, 89, 255);
@@ -60,36 +71,36 @@ span{
     border: none;
     border-radius: 20px;
     cursor: pointer;
-    padding: 0.5rem 1.5rem;
+    padding: 0.5rem 1.2rem;
 }
 .toggle{
     display: none;
 }
-.toggle .bars{
-    color: blue;
-}
 /* Navigation bar for small screen */
-@media only screen and (max-width: 600px) {
+@media(max-width: 600px) {
+    .nav_bar{
+        position: relative;
+        transition: 0.5s height ease-in-out;
+    }
+    /* .nav_bar.expanded{
+        background-color: red;
+    } */
     .links{
        display: none;
-
+    }
+    .links .toggle{
+        display: block;
     }
     .login_nav{
         display: none;
-    }
+    } 
     .toggle{
         display: block;
-    }
-    .bars{
-        width: 50px;
-        font-size: 23px;
-        color: blue;
         background-color: inherit;
+        color: blue;
+        margin-left: 6rem;
         border: none;
-        margin-left: 10rem;
     }
-    
-    
 }
 
 
