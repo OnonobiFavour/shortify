@@ -1,11 +1,10 @@
-import React, { useState } from 'react'
 import { useNavigate} from 'react-router-dom'
 import './Signup.css'
 
-interface SignupProps{
-    setUsername: React.Dispatch<React.SetStateAction<string>>;
-}
-const Signup: React.FC<SignupProps> = ({setUsername}) => {
+// interface SignupProps{
+//     setUsername: React.Dispatch<React.SetStateAction<string>>;
+// }
+const Signup = () => {
     // const [usernameInput, setUsernameInput] = useState("");
     // const [passwordInput, setPasswordInput] = useState("");
     // const history = uesHistory();
