@@ -1,6 +1,5 @@
 .nav_bar{
     width: 100vw;
-    /* height: 40px; */
     display: flex;
     align-items: center;
     position: fixed;
@@ -76,16 +75,43 @@ span{
 .toggle{
     display: none;
 }
+
+
 /* Navigation bar for small screen */
 @media(max-width: 600px) {
     .nav_bar{
         position: relative;
         transition: 0.5s height ease-in-out;
     }
-    .nav_bar.expande{
-        height: 200px;
+    .nav_bar.expanded{
+        color: white;
+        width: 100vw;
+        height: 100vh;
+        transition-timing-function: 1ms;
+        transition-duration: 2s;
+        transition-delay: 1ms;
+        opacity: 0.7;
         background-color: blue;
         color: white;
+    }
+    .nav_bar.expanded .links{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-right: 2rem;
+        flex-direction: column;
+    }
+    .nav_bar.expanded .links li a{
+        color: white;
+    }
+    .nav_bar.expanded .links .login_nav{
+        display: flex;
+        flex-direction: column;
+        padding-right: 1.8rem;
+        column-gap: 1rem;
+    }
+    .nav_bar.expanded .links .login_nav button{
+        margin-top: 1rem;
     }
     .links{
        display: none;
@@ -98,10 +124,15 @@ span{
     } 
     .toggle{
         display: block;
-        background-color: inherit;
         color: blue;
-        margin-left: 6rem;
         border: none;
+    }
+    .fatimes{
+        display: flex;
+        align-items: flex-end;
+        color: white;
+        background-color: blue;
+        
     }
 }
 

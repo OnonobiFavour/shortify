@@ -1,6 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
-import {FaBars, FaTimes} from 'react-icons/fa'
+import {FaBars} from 'react-icons/fa'
+import {TiTimesOutline} from 'react-icons/ti'
 import './Nav.css'
 
 const Nav = () => {
@@ -28,7 +29,7 @@ const Nav = () => {
           </div>
         </div>
           <button className='toggle' onClick={menuClick}>
-            {menu ? <FaBars size={20}></FaBars> : <FaTimes size={20}></FaTimes>}
+            {menu ? <TiTimesOutline className='fatimes' size={40}></TiTimesOutline> : <FaBars size={20}></FaBars>}
         </button> 
     </div>
   )
