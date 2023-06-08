@@ -1,8 +1,10 @@
-// import {data } from './data'
 import { useNavigate } from 'react-router-dom'
-// import {data} from './data'
 import Nav from './Nav'
-
+import {BsBoxes} from 'react-icons/bs'
+import {TbBrandGoogleAnalytics} from 'react-icons/tb'
+import {CiBoxes} from 'react-icons/ci'
+import {AiOutlineQrcode} from 'react-icons/ai'
+import { BiMessageAltEdit } from 'react-icons/bi'
 
 const Home = () => {
     const Navigate = useNavigate();
@@ -24,12 +26,43 @@ const Home = () => {
                 </div>
 
                 <div className="box">
-                    
+                    <div className='icon_wrapper'><BsBoxes size={40}></BsBoxes> &rarr; <CiBoxes size={40}></CiBoxes></div>
+                    <p>Lets create easily accessible links, QR codes and customized domain with shortify</p>
                 </div>
             </div>
         </header>
 
-        <h1>Why chosse <span>shortify</span></h1>
+        <div className="why_choose">
+            <div className="flex1">
+                <div className="box1">
+                    <h1>Why choose <span>shortify</span></h1>
+                    <p>Shortify can make it easier to share a more comprehensive and shorter link online, improve click-through rates, and provide useful tracking and analytics features.</p>
+                </div>
+                <div className="box1">
+                    <BsBoxes className = 'icon1' size={10}></BsBoxes>
+                    <h4>URL shortening</h4>
+                    <p>Shortify allows you to shorten URLs of your business, events. Shorten your URL at scale, URL redirect</p>
+                </div>
+                <div className="box1">
+                    <BiMessageAltEdit className = 'icon1' size={10}></BiMessageAltEdit>
+                    <h4>Custom URL</h4>
+                    <p>Shortify allows you to shorten URLs of your business, events. Shorten your URL at scale, URL redirect</p>
+                </div>
+            </div>
+
+            <div className="flex_2nd">
+                <div className="box1">
+                    <TbBrandGoogleAnalytics className = 'icon1' size={10}></TbBrandGoogleAnalytics>
+                    <h4>Analytics</h4>
+                    <p>Shortify allows you to shorten URLs of your business, events. Shorten your URL at scale, URL redirect</p>
+                </div>
+                <div className="box1" id='QR'>
+                    <AiOutlineQrcode className = 'icon1' size={10}></AiOutlineQrcode>
+                    <h4>QR code</h4>
+                    <p>Shortify allows you to shorten URLs of your business, events. Shorten your URL at scale, URL redirect</p>
+                </div>
+            </div>
+        </div>
         <div className="features">
             {
                 // data.map((item:any)=>{

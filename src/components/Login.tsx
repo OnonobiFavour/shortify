@@ -28,7 +28,7 @@ const Login = () => {
                 <input type="button" className = 'input' value="Confirm"  onClick={dashboard}/>
             </form>
         </div>
-        <p>Not a member? <button className='login2' onClick={handleclick}>signUp</button></p>
+        <p>Not a member? <button className='login2' onClick={handleclick}>create an account</button></p>
     </main>
   )
 }

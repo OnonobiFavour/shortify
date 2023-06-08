@@ -80,7 +80,7 @@ span{
 /* Navigation bar for small screen */
 @media(max-width: 600px) {
     .nav_bar{
-        position: relative;
+        position: absolute;
         transition: 0.5s height ease-in-out;
     }
     .nav_bar.expanded{
@@ -90,7 +90,7 @@ span{
         transition-timing-function: 1ms;
         transition-duration: 2s;
         transition-delay: 1ms;
-        opacity: 0.7;
+        opacity: 0.9;
         background-color: blue;
         color: white;
     }
