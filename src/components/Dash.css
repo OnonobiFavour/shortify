@@ -22,11 +22,11 @@ h1{
 ol{
     list-style-type: none;
     padding-top: 4rem;
-    padding-left: 2rem;
-    font-size: 16px;
+    font-size: 14px;
 }
 ol a{
     text-decoration: none;
+    margin: 0.4rem;
     color: #fff;
 }
 ol a:hover{
@@ -34,6 +34,9 @@ ol a:hover{
     color: blue;
     border-radius: 10px;
     padding: 0.4rem 0.3rem;
+}
+.icons{
+    margin-right: 1rem;
 }
 main{
     height: 100vh;
@@ -99,7 +102,7 @@ h2{
 }
 .email{
     background-color: blue;
-    width: 300px;
+    width: 350px;
     color: white;
     border: none;
     cursor: pointer;
