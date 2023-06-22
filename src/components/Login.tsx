@@ -30,8 +30,8 @@ const Login: React.FC<LoginProps> = ({onLogin}) => {
     return () => unsubscribe();
   }, []);
 
-  const handleLogin = async (e: React.FormEvent<HTMLFormElement>)=>{
-    e.preventDefault();
+  const handleLogin = async (event: React.FormEvent<HTMLFormElement>)=>{
+    event.preventDefault();
     try{
       const auth = getAuth()
       setText('processing')
@@ -52,16 +52,16 @@ const Login: React.FC<LoginProps> = ({onLogin}) => {
       <div className="signup-box">
             <h2>Welcome Back!!</h2>
 
-            <form onSubmit={handleLogin}>
-                <input type="text" className = 'input' placeholder='name' value={username} onChange={(e)=>setUsername(e.target.value)} />
-                <input type="password" className = 'input'value={password} onChange={(e)=> setPassword(e.target.value)} placeholder='password' />
-                <input type = 'email' className = 'input' value={email} onChange={(e)=> setEmail(e.target.value)} placeholder='email or phone'/>
+            <form onSubmit={handleLogin} >
+                <input type="text" className = 'input' placeholder='name' value={username} onChange={(event)=>setUsername(event.target.value)} />
+                <input type="password" className = 'input'value={password} onChange={(event)=> setPassword(event.target.value)} placeholder='password' />
+                <input type = 'email' className = 'input' value={email} onChange={(event)=> setEmail(event.target.value)} placeholder='email or phone'/>
                 
                 {
                    
                 }
 
-                <button type="button" className = 'input' value="Confirm" onClick={handleLogin}>{text}</button>
+                <button type="submit" className = 'input' value="Confirm">{text}</button>
             </form>
         </div>
         <p>Not a member? <button className='login2' onClick={handleclick}>create an account </button></p>

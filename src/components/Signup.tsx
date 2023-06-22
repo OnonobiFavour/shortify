@@ -1,5 +1,6 @@
 import { useNavigate} from 'react-router-dom'
 import { initializeApp} from 'firebase/app';
+import {getAuth, createUserWithEmailAndPassword} from 'firebase/auth'
 import './Signup.css'
 import 'firebase/auth'
 import { config } from '../config/config';
@@ -18,10 +19,15 @@ const Signup: React.FC<SignupProps> = ({onSignUP}) => {
     const handleSignup = async (event: React.FormEvent<HTMLFormElement>) =>{
         event.preventDefault();
         try{
-            await firebase.auth().createUserWithEmailAndPassword(email, password);
+            const auth = getAuth()
+            const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+            const user = userCredential.user;
+            console.log(`${user.email} signned up`)
+            dashboard();
+            await createUserWithEmailAndPassword(auth, email, password);
             onSignUP();
         } catch(error){
-            console.error(error)
+            console.error(`An Error occured: ${error}`)
         }
     };
     const Navigate = useNavigate();
@@ -33,18 +39,18 @@ const Signup: React.FC<SignupProps> = ({onSignUP}) => {
     }
   return (
     <section className='section'>
-        <form className="signup-box" onSubmit={handleSignup}>
+        <main className="signup-box">
             <h2>Welcome!!!</h2>
 
-            <form action="">
+            <form onSubmit={handleSignup}>
                 <input type="text" className = 'input' placeholder='name' />
                 <input type="password" className = 'input' placeholder='password' value={password} onChange={(event)=> setPassword(event.target.value)}/>
                 <input type="password" className = 'input' placeholder='confirm password' />
                 <input type = 'email' className = 'input' value={email} onChange={(event)=>setEmail(event.target.value)} placeholder='email or phone'/>
 
-                <input type="button" className = 'input' value="Confirm"/>
+                <input type="submit" className = 'input' value="Confirm"/>
             </form>
-        </form>
+        </main>
         <p>Already have an account? <button className='login2' onClick={handleclick}>login</button></p>
     </section>
   )
