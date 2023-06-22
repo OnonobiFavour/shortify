@@ -29,12 +29,6 @@ ol a{
     margin: 0.4rem;
     color: #fff;
 }
-ol a:hover{
-    background-color: white;
-    color: blue;
-    border-radius: 10px;
-    padding: 0.4rem 0.3rem;
-}
 .icons{
     margin-right: 1rem;
 }

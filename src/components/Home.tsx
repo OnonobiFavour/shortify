@@ -34,29 +34,34 @@ const Home = () => {
 
         <div className="why_choose">
             <div className="flex1">
-                <div className="box1">
+                <div className="box1" id='QR'>
                     <h1>Why choose <span>shortify</span></h1>
                     <p>Shortify can make it easier to share a more comprehensive and shorter link online, improve click-through rates, and provide useful tracking and analytics features.</p>
                 </div>
-                <div className="box1">
+                <div className="box1" >
                     <BsBoxes className = 'icon1' size={10}></BsBoxes>
                     <h4>URL shortening</h4>
                     <p>Shortify allows you to shorten URLs of your business, events. Shorten your URL at scale, URL redirect</p>
                 </div>
-                <div className="box1">
+                <div className="box1" >
                     <BiMessageAltEdit className = 'icon1' size={10}></BiMessageAltEdit>
                     <h4>Custom URL</h4>
-                    <p>Shortify allows you to shorten URLs of your business, events. Shorten your URL at scale, URL redirect</p>
+                    <p>Shortify allows you to customize the shortened link with your own branding or keywords.This can help your link more memorable and helping you build your brand.</p>
                 </div>
             </div>
 
-            <div className="flex_2nd">
-                <div className="box1">
+            <div className="flex1">
+                <div className="box1" >
                     <TbBrandGoogleAnalytics className = 'icon1' size={10}></TbBrandGoogleAnalytics>
                     <h4>Analytics</h4>
                     <p>Shortify allows you to shorten URLs of your business, events. Shorten your URL at scale, URL redirect</p>
                 </div>
-                <div className="box1" id='QR'>
+                <div className="box1">
+                    <AiOutlineQrcode className = 'icon1' size={10}></AiOutlineQrcode>
+                    <h4>QR code</h4>
+                    <p>Shortify allows you to shorten URLs of your business, events. Shorten your URL at scale, URL redirect</p>
+                </div>
+                <div className="box1">
                     <AiOutlineQrcode className = 'icon1' size={10}></AiOutlineQrcode>
                     <h4>QR code</h4>
                     <p>Shortify allows you to shorten URLs of your business, events. Shorten your URL at scale, URL redirect</p>
