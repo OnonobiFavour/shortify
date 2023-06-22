@@ -1,6 +1,6 @@
 import { useNavigate} from 'react-router-dom'
 import { initializeApp} from 'firebase/app';
-import {getAuth, createUserWithEmailAndPassword} from 'firebase/auth'
+import {getAuth, createUserWithEmailAndPassword, AuthErrorCodes} from 'firebase/auth'
 import './Signup.css'
 import 'firebase/auth'
 import { config } from '../config/config';
@@ -18,16 +18,24 @@ const Signup: React.FC<SignupProps> = ({onSignUP}) => {
 
     const handleSignup = async (event: React.FormEvent<HTMLFormElement>) =>{
         event.preventDefault();
+
         try{
             const auth = getAuth()
             const userCredential = await createUserWithEmailAndPassword(auth, email, password);
             const user = userCredential.user;
             console.log(`${user.email} signned up`)
             dashboard();
-            await createUserWithEmailAndPassword(auth, email, password);
+            createUserWithEmailAndPassword(auth, email, password);
             onSignUP();
         } catch(error){
-            console.error(`An Error occured: ${error}`)
+            // const errorCode = error as FirebaseError;
+            const errorCode = (error as { code: string }).code;
+
+            if(errorCode === AuthErrorCodes.EMAIL_EXISTS){
+                console.error('Email already exists');
+            } else{
+                console.error(`An Error occured: ${error}`)
+            }
         }
     };
     const Navigate = useNavigate();
@@ -48,7 +56,7 @@ const Signup: React.FC<SignupProps> = ({onSignUP}) => {
                 <input type="password" className = 'input' placeholder='confirm password' />
                 <input type = 'email' className = 'input' value={email} onChange={(event)=>setEmail(event.target.value)} placeholder='email or phone'/>
 
-                <input type="submit" className = 'input' value="Confirm"/>
+                <input type="submit" className = 'confirm' value="Confirm"/>
             </form>
         </main>
         <p>Already have an account? <button className='login2' onClick={handleclick}>login</button></p>

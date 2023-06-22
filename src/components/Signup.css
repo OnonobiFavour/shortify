@@ -13,6 +13,7 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 1rem;
+    background-color: inherit;
     place-items: center;
 }
 h2{
@@ -30,10 +31,12 @@ form{
     outline: none;
     margin-bottom: 1.4rem;
 }
-input[ type = 'button']{
+input[ type = 'submit']{
     background-color: blue;
     color: white;
     cursor: pointer;
+    height: 40px;
+    border-radius: 10px;
 }
 input[ type = 'button']:active{
     background-color: rgba(18, 18, 203, 0.351);
