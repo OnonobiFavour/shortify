@@ -2,7 +2,6 @@
     width: 100vw;
     display: flex;
     align-items: center;
-    /* position: fixed; */
     justify-content: space-around;
 }
 span{
@@ -26,10 +25,11 @@ span{
 }
 .links li a{
     text-decoration: none;
-    color: rgb(40, 37, 37);
+    font-family: sans-serif;
+    color: blue;
 }
 .links li a:active{
-    color: blue;
+    color: rgba(0, 0, 255, 0.356);
 }
 .links li a:hover{
     outline: 2px;
@@ -130,6 +130,7 @@ span{
     .fatimes{
         display: flex;
         align-items: flex-end;
+        border: none;
         color: white;
         background-color: blue;
         

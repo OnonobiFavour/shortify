@@ -1,5 +1,6 @@
 import React, {useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
+import './Signup.css'
 import 'firebase/auth'
 import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, UserCredential} from 'firebase/auth';
 import {initializeApp} from 'firebase/app';
@@ -17,33 +18,44 @@ const Login: React.FC<LoginProps> = ({onLogin}) => {
   const [email, setEmail] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   const [text, setText] = useState('confirm')
+  const [loadstate, setLoadstate] = useState(false);
   const Navigate = useNavigate();
 
   useEffect(() => {
+    setLoadstate(true)
     const auth = getAuth();
     const unsubscribe = onAuthStateChanged(auth, (user) => {
-
+      
+      
       if (user) {
         // User is logged in and verified
-        Navigate('/Dashboard');
-      } else{
-        Navigate('/Signup')
+        setErrorMessage('');
       }
     });
 
     return () => unsubscribe();
   }, []);
 
+
   const handleLogin = async (event: React.FormEvent<HTMLFormElement>)=>{
     event.preventDefault();
+
     try{
       const auth = getAuth()
       setText('processing')
       const userCredential: UserCredential = await signInWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
-      onLogin();
-      // Navigate('/Dashboard')
+
+        if (user && user.emailVerified) {
+          alert(`Hey ${user.email}, you are logged in!`);
+          onLogin();
+          Navigate('/dashboard'); // Navigate to the dashboard
+        } else {
+          setErrorMessage('Your account is not verified. Please verify your email.');
+        }
+
     } catch(error){
+      setErrorMessage('Invalid Email or password. Please try again')
       console.error(error);
     }
   }
@@ -64,7 +76,7 @@ const Login: React.FC<LoginProps> = ({onLogin}) => {
                 
                 {errorMessage && <p className="error-message">{errorMessage}</p>}
 
-                <button type="submit" className = 'input' value="Confirm">{text}</button>
+                <input type="submit" value={text} className = 'input' />
             </form>
         </div>
         <p>Not a member? <button className='login2' onClick={handleclick}>create an account </button></p>

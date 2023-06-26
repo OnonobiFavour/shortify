@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import Nav from './Nav'
+import Footer from './Footer'
 import {BsBoxes} from 'react-icons/bs'
 import {TbBrandGoogleAnalytics} from 'react-icons/tb'
 import {CiBoxes} from 'react-icons/ci'
@@ -11,13 +12,20 @@ const Home = () => {
     const Handleclick = () =>{
         Navigate('/Signup')
     }
- 
+    
+    const tryForFree = () =>{
+        Navigate('/Login')
+    }
+
+    const Pricing = () =>{
+        Navigate('/Pricing')
+    }
   return (
     <section className="header_wrapper">
         <Nav></Nav>
         <header className="header">
             <div className="text">
-                <h1>Optimize Your Online Experinence with Our Advanced <span>URL Shortening</span> solution</h1>
+                <h1 className='header_h1'>Optimize Your Online Experinence with Our Advanced <span>URL Shortening</span> solution</h1>
                 <p>Personalize your shortened URLs to align with your board identity. utilize custom slugs branded links, and domain customization option to reinforce your brand presence and enhance user engaement.</p>
 
                 <div className="header-btn">
@@ -54,12 +62,12 @@ const Home = () => {
                 <div className="box1" >
                     <TbBrandGoogleAnalytics className = 'icon1' size={10}></TbBrandGoogleAnalytics>
                     <h4>Analytics</h4>
-                    <p>Shortify allows you to shorten URLs of your business, events. Shorten your URL at scale, URL redirect</p>
+                    <p>Shortify helps users with tracking analysis. It gives account to every click a user might have performed</p>
                 </div>
                 <div className="box1">
                     <AiOutlineQrcode className = 'icon1' size={10}></AiOutlineQrcode>
                     <h4>QR code</h4>
-                    <p>Shortify allows you to shorten URLs of your business, events. Shorten your URL at scale, URL redirect</p>
+                    <p>Generating QRcodes for the shortened link would be made smooth and easy with shortify, granting users an easy access to the created QR code.</p>
                 </div>
                 <div className="box1">
                     <AiOutlineQrcode className = 'icon1' size={10}></AiOutlineQrcode>
@@ -68,17 +76,30 @@ const Home = () => {
                 </div>
             </div>
         </div>
-        <div className="features">
-            {
-                // data.map((item:any)=>{
-                //     return(
-                //         <div className="feature_list">
-                //             <p>{item.feature}</p>
-                //         </div>
-                //     )
-                // })
-            }
+
+
+        <h1 className='pricingH1'>Choose <span>Pricing</span></h1>
+        <div className="Price_tags">
+            <div className="tag1">
+                <h3>Zero Payment for 3months</h3>
+                <p>Shorten your link for free for the first 3months of rgisteration.</p>
+                <button onClick={tryForFree}>Try for free&rarr;</button>
+            </div>
+
+            <div className="tag2">
+                <h3>$9/month subscription</h3>
+                <p>For creation of links after 3 months of membership, User gets to pay $9 after the 3months free trial expires</p>
+                <button onClick={Pricing}>Pricng&rarr;</button>
+            </div>
+
+            <div className="tag1">
+                <h3>Pay $50 to Get Infinite Access</h3>
+                <p>You can Create as much link as you can On shortify Platinum Access.</p>
+                <button onClick={Pricing}>Try Offer&rarr;</button>
+            </div>
         </div>
+
+        <Footer></Footer>
     </section>
   )
 }

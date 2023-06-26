@@ -21,7 +21,7 @@ const AuthRoute: React.FunctionComponent<AuthRouteProps> = ({children}) => {
             setLoading(false)
         } else{
             console.log("UNKNOWN APPLICATION");
-            // navigate('/Signup')
+            navigate('/')
         }
     })
 

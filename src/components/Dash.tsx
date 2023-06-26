@@ -7,14 +7,16 @@ import {BiCustomize} from 'react-icons/bi'
 import {GoMail} from 'react-icons/go'
 import {RxExit} from 'react-icons/rx'
 
+
 const Dash = () => {
+
   return (
     <section className = 'dashboard'>
         <div className="side_bar">
           <h1>Dashboard</h1>
             <ul>
                 <ol><a href="#"><HiOutlineScissors className='icons' size={20}></HiOutlineScissors>Trim Url</a></ol>
-                <ol><a href="#"><AiOutlineQrcode className='icons' size={20}></AiOutlineQrcode>Create QR code</a></ol>
+                <ol><a href="/QR_generation"><AiOutlineQrcode className='icons' size={20}></AiOutlineQrcode>Create QR code</a></ol>
                 <ol><a href="#"><BiCustomize className='icons' size={20}></BiCustomize>Custom Url</a></ol>
                 <ol><a href="#"><MdOutlineDomainAdd className = 'icons' size={20}></MdOutlineDomainAdd>Domain Integration</a></ol>
                 <ol><a href="#"><RxExit className = 'icons' size={20}></RxExit>Exit</a></ol>
@@ -28,7 +30,7 @@ const Dash = () => {
                 </div>
                 <div className="flex">
 
-                    <div className="flex1">
+                    <div className="_flex1">
                         <div className="trims">
                             <p>Your Trims</p>
                             <br />
@@ -41,7 +43,7 @@ const Dash = () => {
                         </div>
                     </div>
 
-                    <div className="flex2">
+                    <div className="_flex1">
                         <div className="trims">
                             <p>Domain Generated</p>
                             <br />
@@ -53,7 +55,7 @@ const Dash = () => {
                             <h3>0</h3>
                         </div>
                     </div>
-                    <button className="email">Send as Mail <GoMail size={20}></GoMail></button>
+                    {/* <button className="email">Send as Mail <GoMail size={20}></GoMail></button> */}
                 </div>
             </div>
         </main>

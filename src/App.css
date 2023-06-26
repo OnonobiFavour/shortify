@@ -37,7 +37,7 @@ body{
   flex-wrap: wrap;
 }
 .text h1{
-  font-size: 30px;
+  font-size: 40px;
   margin-bottom: 2rem;
   flex-wrap: wrap;
   font-family: Arial, Helvetica, sans-serif;
@@ -100,6 +100,12 @@ h1{
   flex-direction: column;
   justify-content: center;
 }
+.flex1{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
 
 #QR{
   background-color: inherit;
@@ -110,13 +116,11 @@ h1{
   margin-bottom: 1.5rem;
   height: 200px;
   font-family: sans-serif;
-  margin-right: 4rem;
+  /* margin-right: 4rem; */
   border-radius: 10px;
-  margin-left: 3rem;
-  box-shadow: 0px 1px 0px 0px;
-  background-color: white;
+  /* margin-left: 3rem; */
   display: block;
-  padding:1rem 0rem 0rem 2rem;
+  /* padding:1rem 0rem 0rem 2rem; */
 }
 .box1 .icon1{
   background-color: rgb(195, 210, 252);
@@ -132,6 +136,94 @@ h1{
 .box1 p{
   font-size: 14px;
   padding-bottom: 1rem;
+}
+.pricingH1{
+  font-size: 40px;
+  padding: 2rem 0rem;
+}
+.Price_tags{
+  width: 100vw;
+  height: 40vh;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+.tag1{
+  width: 250px;
+  height: 300px;
+  cursor: pointer;
+  font-family: sans-serif;
+  border: none;
+  background-color: white;
+  border-radius: 10px;
+  text-align: center;
+}
+.tag1 h3{
+  font-size: 25px;
+  text-align: center;
+  padding: 1rem 0rem 2rem;
+}
+.tag1 p{
+  padding-top: 3rem;
+  font-family: sans-serif;
+}
+.tag1 button{
+  background-color: inherit;
+  color: black;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  margin-top: 2rem;
+}
+.tag1 button:hover{
+  color: grey;
+}
+.tag1:hover{
+  box-shadow: 18px 18px 18px 18px grey;
+}
+.tag2{
+  width: 250px;
+  height: 350px;
+  cursor: pointer;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0rem;
+  border-radius: 10px;
+  margin: 1rem 2rem;
+  background-color: rgb(1, 1, 77);
+}
+.tag2:hover{
+  box-shadow: 18px 18px 18px 18px grey;
+}
+.tag2 h3{
+  font-size: 30px;
+  text-align: center;
+  padding-top: 1rem;
+}
+.tag2 p{
+  text-align: center;
+  font-size: 17px;
+  padding-top: 3rem;
+}
+.tag2 button{
+  background-color: inherit;
+  color: white;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  margin-top: 2rem;
+}
+.tag2 button:hover{
+  color: grey;
+}
+@media(max-width: 580px) {
+
+  .Price_tags{
+    height: 110vh;
+    margin-bottom: 3rem;
+  }
 }
 
 

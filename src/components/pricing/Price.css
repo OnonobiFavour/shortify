@@ -1,0 +1,25 @@
+.header_price{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: whitesmoke;
+    color: rgba(173, 162, 162, 0.773);
+}
+.svg{
+    text-align: center;
+    margin: 2rem 0rem;
+}
+.p{
+    font-size: 20px;
+    color: grey;
+    padding-bottom: 2rem;
+}
+.button{
+    color: blue;
+    background: inherit;
+    cursor: pointer;
+    width: 200px;
+    border: none;
+}

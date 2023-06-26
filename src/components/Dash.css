@@ -43,7 +43,10 @@ main{
 h2{
     color: gray;
 }
-
+.inputs{
+    /* width: 1240px; */
+    height: 100vh;
+}
 .input_wrapper{
     width: 100%;
     display: flex;
@@ -66,17 +69,17 @@ h2{
     flex-direction: column;
     margin-top: 2rem;
 }
-.flex1{
+._flex1{
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
     margin-bottom: 1rem;
 }
-.flex2{
+/* .flex2{
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
-}
+} */
 .trims{
     width: 360px;
     height: 100px;
@@ -105,4 +108,12 @@ h2{
     height: 40px;
     margin-top: 6rem;
 }
-/* @media () */
+@media(max-width: 600px){
+    .side_bar{
+        display: none;
+    }
+    .inputs{
+        width: 100vw;
+        height: 100vh;
+    }
+}

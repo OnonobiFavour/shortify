@@ -1,0 +1,32 @@
+.QR_wrapper{
+    width: 100vw;
+    height: 100vh;
+}
+.Qr_inputWrapper{
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+.Qr_input{
+    width: 300px;
+    height: 40px;
+    border-radius: 20px;
+    border: 1px solid grey;
+    font-size: 20px;
+    padding-left: 1.4rem;
+    align-items: center;
+}
+.Qr_inputWrapperBtn{
+    width: 100px;
+    border-radius: 10px;
+    background-color: blue;
+    color: white;
+    height: 40px;
+    border: none;
+    margin-left: 1rem;
+    cursor: pointer;
+}
+.Qr_inputWrapperBtn:active{
+    background-color: rgb(30, 30, 121);
+}

@@ -1,5 +1,6 @@
 import { useNavigate} from 'react-router-dom'
 import { initializeApp} from 'firebase/app';
+import "firebase/auth";
 import {getAuth, createUserWithEmailAndPassword, AuthErrorCodes} from 'firebase/auth'
 import './Signup.css'
 import 'firebase/auth'
@@ -13,38 +14,49 @@ interface SignupProps {
     onSignUP: () => void;
 }
 const Signup: React.FC<SignupProps> = ({onSignUP}) => {
+    const navigate = useNavigate()
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('')
+    const [error, setError] = useState("");
+    const [passwordMatch, setPasswordMatch] = useState(true)
 
     const handleSignup = async (event: React.FormEvent<HTMLFormElement>) =>{
         event.preventDefault();
 
-        try{
-            const auth = getAuth()
-            const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-            const user = userCredential.user;
-            console.log(`${user.email} signned up`)
-            dashboard();
-            createUserWithEmailAndPassword(auth, email, password);
-            onSignUP();
-        } catch(error){
-            // const errorCode = error as FirebaseError;
-            const errorCode = (error as { code: string }).code;
+        if (password === confirmPassword) {
+            // Passwords match, proceed with signup logic
+            console.log('Signup successful!');
 
-            if(errorCode === AuthErrorCodes.EMAIL_EXISTS){
-                console.error('Email already exists');
-            } else{
-                console.error(`An Error occured: ${error}`)
+            try{
+                const auth = getAuth()
+                await createUserWithEmailAndPassword(auth, email, password);
+                navigate("/dashboard");
+                onSignUP();
+            } catch(error){
+                // const errorCode = error as FirebaseError;
+                const errorCode = (error as { code: string }).code;
+    
+                if(errorCode === AuthErrorCodes.EMAIL_EXISTS){
+                    setError("The email already in use.");;
+                } else{
+                    console.error(`An Error occured: ${error}`)
+                }
             }
-        }
+          } else {
+            // Passwords do not match
+            setPasswordMatch(false);
+          }
+
+        
     };
     const Navigate = useNavigate();
     const handleclick = ()=>{
         Navigate('/login')
     }
-    const dashboard=()=>{
-        Navigate('/Dashboard')
-    }
+    // const dashboard=()=>{
+    //     Navigate('/Dashboard')
+    // }
   return (
     <section className='section'>
         <main className="signup-box">
@@ -53,13 +65,18 @@ const Signup: React.FC<SignupProps> = ({onSignUP}) => {
             <form onSubmit={handleSignup}>
                 <input type="text" className = 'input' placeholder='name' />
                 <input type="password" className = 'input' placeholder='password' value={password} onChange={(event)=> setPassword(event.target.value)}/>
-                <input type="password" className = 'input' placeholder='confirm password' />
+                <input type="password" className = 'input' placeholder='confirm password' value={confirmPassword} onChange={(event)=> setConfirmPassword(event.target.value)} />
                 <input type = 'email' className = 'input' value={email} onChange={(event)=>setEmail(event.target.value)} placeholder='email or phone'/>
 
+
+                {!passwordMatch && <p className='err'>Passwords do not match!</p>}
                 <input type="submit" className = 'confirm' value="Confirm"/>
+                    
             </form>
         </main>
         <p>Already have an account? <button className='login2' onClick={handleclick}>login</button></p>
+
+        {error && <p className='err'>{error}</p>}
     </section>
   )
 }

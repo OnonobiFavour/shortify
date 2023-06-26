@@ -13,14 +13,15 @@ const Nav = () => {
   const login = () =>{
     Navigate("/Login")
 }
+
+  
   return (
     <div className={menu ? 'nav_bar expanded' : 'nav_bar'}>
       <span className='log_name'>Shortify</span>
         <div className='links'>
           <li><Link to = {'/'}>Home</Link></li>
-          <li><Link to = {''}>Docs</Link></li>
-          <li><Link to = {''}>Pricing</Link></li>
-          <li><Link to = {''}></Link></li>
+          <li><Link to = {''}>Analysis</Link></li>
+          <li><Link to = {'/Pricing'}>Pricing</Link></li>
 
           <div className='login_nav'>
             <li><Link to = {'/login'}>Log in</Link></li>

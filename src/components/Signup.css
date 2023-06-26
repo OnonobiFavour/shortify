@@ -47,3 +47,7 @@ input[ type = 'button']:active{
     cursor: pointer;
     border: none;
 }
+.err{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: red;
+}
