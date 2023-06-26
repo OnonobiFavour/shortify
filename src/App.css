@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 *{
   margin: 0;
   padding: 0;
@@ -7,7 +8,7 @@
 body{
   width: 100vw;
   height: 100vh;
-  background-color: rgba(245, 245, 245, 0.834);
+  background-color: #f5f5f5d5;
 }
 .header_wrapper{
   width: 100vw;
@@ -19,7 +20,7 @@ body{
 }
 .header{
  display: flex;
- font-family: sans-serif;
+ font-family: 'Ubuntu', sans-serif;
  align-items: center;
  justify-content: center;
  flex-wrap: wrap;
@@ -40,14 +41,16 @@ body{
   font-size: 40px;
   margin-bottom: 2rem;
   flex-wrap: wrap;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Ubuntu', sans-serif;
+
 }
 .text h1 span{
   border-radius: 50%;
   padding-bottom: 0.5rem;
 }
 .text p{
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Ubuntu', sans-serif;
+
   margin-bottom: 2rem;
   display: flex;
   flex-wrap: wrap;
@@ -67,14 +70,15 @@ body{
   border: none;
   cursor: pointer;
   padding: 0.5rem 1.6rem;
-  font-family: sans-serif;
+  font-family: 'Ubuntu', sans-serif;
+
 }
 .box{
   width: 330px;
   height: 150px;
   background-color: inherit;
   border: 1px solid rgba(162, 164, 171, 0.484);
-  font-family: sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -91,7 +95,7 @@ body{
 }
 h1{
   text-align: center;
-  font-family: sans-serif;
+  font-family: 'Ubuntu', sans-serif;
 }
 .why_choose{
   width: 100%;
@@ -102,6 +106,7 @@ h1{
 }
 .flex1{
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   width: 100%;
@@ -115,7 +120,7 @@ h1{
   width: 300px;
   margin-bottom: 1.5rem;
   height: 200px;
-  font-family: sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   /* margin-right: 4rem; */
   border-radius: 10px;
   /* margin-left: 3rem; */
@@ -154,7 +159,7 @@ h1{
   width: 250px;
   height: 300px;
   cursor: pointer;
-  font-family: sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   border: none;
   background-color: white;
   border-radius: 10px;
@@ -167,7 +172,7 @@ h1{
 }
 .tag1 p{
   padding-top: 3rem;
-  font-family: sans-serif;
+  font-family: 'Ubuntu', sans-serif;
 }
 .tag1 button{
   background-color: inherit;
