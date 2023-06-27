@@ -47,7 +47,7 @@ const Dash = () => {
                     onChange={(event) => setLongUrl(event.target.value)}
                     className = 'Trim_inputs'
                     />
-                    <button type="submit">Shorten</button>
+                    <button type="submit" className='shorten'>Shorten</button>
                 </form>
                     {/* <input className = 'Trim_inputs' type="text" placeholder="Paste Your Url" /> */}
                     {shortUrl && (
@@ -83,7 +83,7 @@ const Dash = () => {
                             <h3>0</h3>
                         </div>
                     </div>
-                    <button className="email">create</button>
+                    {/* <button className="email">create</button> */}
                 </div>
             </div>
         </main>

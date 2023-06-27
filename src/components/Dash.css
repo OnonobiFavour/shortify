@@ -4,7 +4,7 @@
     display: flex;
 }
 .side_bar{
-    width: 30%;
+    width: 20%;
     height: 100vh;
     color: white;
     font-family: sans-serif;
@@ -54,7 +54,7 @@ h2{
     justify-content: center;
 }
 .Trim_inputs{
-    width: 350px;
+    width: 250px;
     padding-left: 2rem;
     height: 40px;
     border: none;
@@ -110,6 +110,11 @@ h2{
     height: 40px;
     margin-top: 6rem;
 }
+.shorten{
+    width: 100px;
+    align-items: center;
+    height: 40px;
+}
 @media(max-width: 780px){
     .side_bar{
         width: 100px;
@@ -121,14 +126,14 @@ h2{
         font-size: 0px;
     }
     .Trim_inputs{
-        width: 450px;
+        width: 350px;
     }
     .side_bar h1{
         display: none;
     }
     .inputs{
-        width: 100vw;
-        height: 100vh;
+        width: 78vw;
+        height: 50vh;
     }
     ._flex1{
         display: flex;
