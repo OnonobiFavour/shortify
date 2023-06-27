@@ -70,13 +70,15 @@ const Signup: React.FC<SignupProps> = ({onSignUP}) => {
 
 
                 {!passwordMatch && <p className='err'>Passwords do not match!</p>}
+                {error && <p className='err'>{error}</p>}
                 <input type="submit" className = 'confirm' value="Confirm"/>
                     
             </form>
         </main>
-        <p>Already have an account? <button className='login2' onClick={handleclick}>login</button></p>
+        
+        <p className='oldAcc'>Already have an account? <button className='login2' onClick={handleclick}>login</button></p>
 
-        {error && <p className='err'>{error}</p>}
+        
     </section>
   )
 }

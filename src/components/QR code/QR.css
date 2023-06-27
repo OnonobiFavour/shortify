@@ -9,7 +9,8 @@
     display: flex;
 }
 .Qr_input{
-    width: 300px;
+    width: 400px;
+    outline: none;
     height: 40px;
     border-radius: 20px;
     border: 1px solid grey;
@@ -30,3 +31,25 @@
 .Qr_inputWrapperBtn:active{
     background-color: rgb(30, 30, 121);
 }
+._QR_Code{
+    display: flex;
+    width: 100vw;
+    height: 90vh;
+    flex-direction: column;
+    column-gap: 2rem;
+    align-items: center;
+    justify-content: center;
+}
+.Generate{
+    width: 200px;
+    color: white;
+    margin-top: 2rem;
+    background-color: blue;
+    border: none;
+    height: 40px;
+}
+
+
+
+
+

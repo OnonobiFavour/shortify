@@ -4,7 +4,7 @@
     display: flex;
 }
 .side_bar{
-    width: 200px;
+    width: 30%;
     height: 100vh;
     color: white;
     font-family: sans-serif;
@@ -22,7 +22,7 @@ h1{
 ol{
     list-style-type: none;
     padding-top: 4rem;
-    font-size: 14px;
+    font-size: 18px;
 }
 ol a{
     text-decoration: none;
@@ -44,7 +44,7 @@ h2{
     color: gray;
 }
 .inputs{
-    /* width: 1240px; */
+    width: 70%;
     height: 100vh;
 }
 .input_wrapper{
@@ -73,6 +73,8 @@ h2{
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
+    align-items: center;
+    justify-content: center;
     margin-bottom: 1rem;
 }
 /* .flex2{
@@ -108,12 +110,28 @@ h2{
     height: 40px;
     margin-top: 6rem;
 }
-@media(max-width: 600px){
+@media(max-width: 780px){
     .side_bar{
+        width: 100px;
+        background-color: #cfc4c496;
+    }
+    .side_bar ol a{
+        color: rgb(23, 23, 159);
+        padding: 0.7rem;
+        font-size: 0px;
+    }
+    .Trim_inputs{
+        width: 450px;
+    }
+    .side_bar h1{
         display: none;
     }
     .inputs{
         width: 100vw;
         height: 100vh;
+    }
+    ._flex1{
+        display: flex;
+        flex-direction: column;
     }
 }

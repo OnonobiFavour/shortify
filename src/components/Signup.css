@@ -25,9 +25,10 @@ form{
     margin: 2rem 0rem;
 }
 .input{
-    padding: 1rem 4.5rem;
+    padding: 1rem 3.5rem;
     border-radius: 10px;
     border: none;
+    font-size: 20px;
     outline: none;
     margin-bottom: 1.4rem;
 }
@@ -35,7 +36,9 @@ input[ type = 'submit']{
     background-color: blue;
     color: white;
     cursor: pointer;
+    text-align: center;
     height: 40px;
+    margin-bottom: 1rem;
     border-radius: 10px;
 }
 input[ type = 'button']:active{
@@ -48,6 +51,9 @@ input[ type = 'button']:active{
     border: none;
 }
 .err{
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    padding-bottom: 1rem;
     color: red;
+}
+.oldAcc{
+    padding-top: 1rem;
 }

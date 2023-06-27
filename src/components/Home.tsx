@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import Nav from './Nav'
+import {useState} from 'react'
 import Footer from './Footer'
 import {BsBoxes} from 'react-icons/bs'
 import {TbBrandGoogleAnalytics} from 'react-icons/tb'
@@ -8,6 +9,7 @@ import {AiOutlineQrcode} from 'react-icons/ai'
 import { BiMessageAltEdit } from 'react-icons/bi'
 
 const Home = () => {
+
     const Navigate = useNavigate();
     const Handleclick = () =>{
         Navigate('/Signup')

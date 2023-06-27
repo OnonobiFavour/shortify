@@ -1,10 +1,12 @@
 const express = require('express');
+const cors = require("cors")
 const nodemailer = require('nodemailer');
 
 const app = express();
 const PORT = 3001;
 
 app.use(express.json());
+app.use(cors());
 
 app.post('/send-email', (req, res) => {
   const { email, qrCodeURL } = req.body;

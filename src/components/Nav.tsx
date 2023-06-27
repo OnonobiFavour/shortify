@@ -30,7 +30,7 @@ const Nav = () => {
           </div>
         </div>
           <button className='toggle' onClick={menuClick}>
-            {menu ? <TiTimesOutline className='fatimes' size={40}></TiTimesOutline> : <FaBars size={20}></FaBars>}
+            {menu ? <TiTimesOutline className='fatimes' size={40}></TiTimesOutline> : <FaBars size={30}></FaBars>}
         </button> 
     </div>
   )

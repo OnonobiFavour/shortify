@@ -18,11 +18,11 @@ const Login: React.FC<LoginProps> = ({onLogin}) => {
   const [email, setEmail] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   const [text, setText] = useState('confirm')
-  const [loadstate, setLoadstate] = useState(false);
+  // const [loadstate, setLoadstate] = useState(false);
   const Navigate = useNavigate();
 
   useEffect(() => {
-    setLoadstate(true)
+    // setLoadstate(true)
     const auth = getAuth();
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       
@@ -56,6 +56,7 @@ const Login: React.FC<LoginProps> = ({onLogin}) => {
 
     } catch(error){
       setErrorMessage('Invalid Email or password. Please try again')
+      setText("confirm")
       console.error(error);
     }
   }
@@ -75,7 +76,6 @@ const Login: React.FC<LoginProps> = ({onLogin}) => {
                 <input type = 'email' className = 'input' value={email} onChange={(event)=> setEmail(event.target.value)} placeholder='email or phone'/>
                 
                 {errorMessage && <p className="error-message">{errorMessage}</p>}
-
                 <input type="submit" value={text} className = 'input' />
             </form>
         </div>

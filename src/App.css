@@ -93,6 +93,10 @@ body{
   margin-top: 1rem;
   color: gray;
 }
+.error-message{
+  color: red;
+  padding-bottom: 1rem;
+}
 h1{
   text-align: center;
   font-family: 'Ubuntu', sans-serif;
@@ -106,7 +110,6 @@ h1{
 }
 .flex1{
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   width: 100%;
@@ -125,7 +128,6 @@ h1{
   border-radius: 10px;
   /* margin-left: 3rem; */
   display: block;
-  /* padding:1rem 0rem 0rem 2rem; */
 }
 .box1 .icon1{
   background-color: rgb(195, 210, 252);
@@ -147,8 +149,8 @@ h1{
   padding: 2rem 0rem;
 }
 .Price_tags{
-  width: 100vw;
-  height: 40vh;
+  width: 100%;
+  height: 50%;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -157,6 +159,9 @@ h1{
 }
 .tag1{
   width: 250px;
+  color: black;
+  transition: transform 0.3s ease;
+  transform: translateX(0);
   height: 300px;
   cursor: pointer;
   font-family: 'Ubuntu', sans-serif;
@@ -172,6 +177,7 @@ h1{
 }
 .tag1 p{
   padding-top: 3rem;
+  color: black;
   font-family: 'Ubuntu', sans-serif;
 }
 .tag1 button{
@@ -190,6 +196,8 @@ h1{
 }
 .tag2{
   width: 250px;
+  transition: transform 0.3s ease;
+  transform: translateX(0);
   height: 350px;
   cursor: pointer;
   color: #fff;
@@ -223,11 +231,22 @@ h1{
 .tag2 button:hover{
   color: grey;
 }
-@media(max-width: 580px) {
+@media(max-width: 780px) {
 
   .Price_tags{
     height: 110vh;
     margin-bottom: 3rem;
+  }
+  .flex1{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .tag1{
+    width: 90%;
+  }
+  .tag2{
+    width: 100%;
   }
 }
 

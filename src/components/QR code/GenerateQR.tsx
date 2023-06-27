@@ -1,6 +1,8 @@
 import React, {ChangeEvent, useState } from 'react'
 import QRCode from 'qrcode.react';
+import './QR.css'
 import axios from 'axios';
+import { EmailAuthCredential } from 'firebase/auth';
 
 
 const GenerateQR = () => {
@@ -22,9 +24,8 @@ const GenerateQR = () => {
 
   const sendEmail = async (qrCodeURL: string) => {
     try {
-      // Call your backend API to send the email with the QR code
-      await axios.post('/send-email', {
-        email: 'user@example.com', // Replace with the user's logged-in email
+      await axios.post('http://localhost:3001/send-email', {
+        email: EmailAuthCredential, 
         qrCodeURL: qrCodeURL,
       });
 
@@ -36,9 +37,10 @@ const GenerateQR = () => {
     }
 };
   return (
-    <div>
-      <input type="text" value={inputValue} onChange={handleInputChange} />
-      <button onClick={generateQRCode}>Generate QR Code and Send Email</button>
+    <div className='_QR_Code'>
+      <input type="text" value={inputValue} className= 'Qr_input' onChange={handleInputChange} />
+      <button onClick={generateQRCode} className='Generate'>Generate QR Code</button>
+      <br />
       {inputValue && <QRCode value={inputValue} />}
     </div>
   )
