@@ -2,7 +2,9 @@ import React from 'react'
 
 const PageError = () => {
   return (
-    <div>PageError</div>
+    <div>
+      <h1>404 Error!!! <br /> page not found</h1>
+    </div>
   )
 }
 
