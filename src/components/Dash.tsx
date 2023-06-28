@@ -30,7 +30,7 @@ const Dash = () => {
                 <ol><a href="#"><HiOutlineScissors className='icons' size={30}></HiOutlineScissors>Trim Url</a></ol>
                 <ol><a href="/QR_generation"><AiOutlineQrcode className='icons' size={30}></AiOutlineQrcode>Create QR</a></ol>
                 <ol><a href="#"><BiCustomize className='icons' size={30}></BiCustomize>Custom Url</a></ol>
-                <ol><a href="#"><MdOutlineDomainAdd className = 'icons' size={30}></MdOutlineDomainAdd>Domain</a></ol>
+                <ol><a href="/Pricing"><MdOutlineDomainAdd className = 'icons' size={30}></MdOutlineDomainAdd>Domain</a></ol>
                 <ol><a href="/"><RxExit className = 'icons' size={30}></RxExit>Exit</a></ol>
             </ul>
         </div>

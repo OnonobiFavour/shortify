@@ -12,7 +12,7 @@ const Price = () => {
     <header className="header_price">
         <div className="svg">
             <RiPriceTag2Line size={200}></RiPriceTag2Line>
-            <p className='p'>Price tags would become enabled after 3months of free trial has expired.</p>
+            <p className='p'>Price tags and Domains would become enabled after 3months of free trial has expired.</p>
             <button className='button' onClick={handleHome}>Back to home</button>
         </div>
     </header>
