@@ -54,7 +54,7 @@ h2{
     justify-content: center;
 }
 .Trim_inputs{
-    width: 250px;
+    width: 300px;
     padding-left: 2rem;
     height: 40px;
     border: none;
@@ -83,7 +83,7 @@ h2{
     gap: 2rem;
 } */
 .trims{
-    width: 360px;
+    width: 300px;
     height: 100px;
     border: 1px solid rgba(225, 225, 225, 0.949);
     border-radius: 10px;
@@ -112,6 +112,12 @@ h2{
 }
 .shorten{
     width: 100px;
+    background-color: blue;
+    border: none;
+    color: white;
+    margin-left: 6.4rem;
+    margin-top: 1rem;
+    border-radius: 10px;
     align-items: center;
     height: 40px;
 }
@@ -126,7 +132,7 @@ h2{
         font-size: 0px;
     }
     .Trim_inputs{
-        width: 350px;
+        width: 300px;
     }
     .side_bar h1{
         display: none;

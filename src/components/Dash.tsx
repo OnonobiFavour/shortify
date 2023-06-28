@@ -19,7 +19,7 @@ const Dash = () => {
       const response = await axios.post('http://localhost:3001/shorten', { longUrl });
       setShortUrl(response.data.shortUrl);
     } catch (error) {
-      console.error('Error generating short URL:', error);
+      console.log('Error generating short URL:', error);
     }
 };
   return (
@@ -41,11 +41,10 @@ const Dash = () => {
 
                  <form onSubmit={handleSubmit}>
                     <input
-                    type="text"
+                    type="text" className = 'Trim_inputs'
                     placeholder="Enter a long URL"
                     value={longUrl}
                     onChange={(event) => setLongUrl(event.target.value)}
-                    className = 'Trim_inputs'
                     />
                     <button type="submit" className='shorten'>Shorten</button>
                 </form>
