@@ -20,7 +20,7 @@ const Dash = () => {
   
     const handleShorten = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault()
-        const slug = new TinyUniqueId().unique()
+        const slug = TinyUniqueId.unique()
         await db.collection('urls').add({
             url: originalUrl,
             slug: slug
