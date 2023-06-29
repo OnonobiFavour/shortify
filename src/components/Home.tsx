@@ -1,6 +1,5 @@
 import { useNavigate } from 'react-router-dom'
 import Nav from './Nav'
-import {useState} from 'react'
 import Footer from './Footer'
 import {BsBoxes} from 'react-icons/bs'
 import {TbBrandGoogleAnalytics} from 'react-icons/tb'

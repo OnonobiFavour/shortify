@@ -18,9 +18,9 @@ initializeApp(config.firebaseConfig);
 export interface AppPropps{}
 const App: React.FunctionComponent<AppPropps> = (props) => {
   return (
-      <Router>
-    <Routes>
-      <Route path='/' element={
+    <Router>
+        <Routes>
+        <Route path='/' element={
        <AuthRoute>
         <Home></Home>
         </AuthRoute>}>

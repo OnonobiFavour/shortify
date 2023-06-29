@@ -2,7 +2,7 @@ import React, {useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import './Signup.css'
 import 'firebase/auth'
-import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, UserCredential} from 'firebase/auth';
+import { getAuth, signInWithEmailAndPassword, UserCredential} from 'firebase/auth';
 import {initializeApp} from 'firebase/app';
 import { config } from '../config/config';
 
@@ -21,20 +21,20 @@ const Login: React.FC<LoginProps> = ({onLogin}) => {
   // const [loadstate, setLoadstate] = useState(false);
   const Navigate = useNavigate();
 
-  useEffect(() => {
-    // setLoadstate(true)
-    const auth = getAuth();
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
+  // useEffect(() => {
+  //   // setLoadstate(true)
+  //   const auth = getAuth();
+  //   const unsubscribe = onAuthStateChanged(auth, (user) => {
       
       
-      if (user) {
-        // User is logged in and verified
-        setErrorMessage('');
-      }
-    });
+  //     if (user) {
+  //       // User is logged in and verified
+  //       setErrorMessage('');
+  //     }
+  //   });
 
-    return () => unsubscribe();
-  }, []);
+  //   return () => unsubscribe();
+  // }, []);
 
 
   const handleLogin = async (event: React.FormEvent<HTMLFormElement>)=>{
