@@ -10,7 +10,7 @@ import {HiOutlineScissors} from 'react-icons/hi'
 import {MdOutlineDomainAdd} from 'react-icons/md'
 import {BiCustomize} from 'react-icons/bi'
 import {RxExit} from 'react-icons/rx'
-import tinyid from 'tiny-unique-id';
+import TinyUniqueId from 'tiny-unique-id';
 
 const Dash = () => {
     const [originalUrl, setOriginalUrl] = useState('');
@@ -20,7 +20,7 @@ const Dash = () => {
   
     const handleShorten = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault()
-        const slug = tinyid.unique()
+        const slug = new TinyUniqueId().unique()
         await db.collection('urls').add({
             url: originalUrl,
             slug: slug
