@@ -11,6 +11,7 @@ import { initializeApp} from 'firebase/app';
 import { config } from './config/config'
 import PageError from './components/error/PageError'
 import AuthRoute from './Auth/AuthRoute'
+import Redirect from './components/Redirect'
 
 initializeApp(config.firebaseConfig);
 
@@ -36,6 +37,7 @@ const App: React.FunctionComponent<AppPropps> = (props) => {
 
       </Route>
       <Route path='/Dashboard' element={<Dash></Dash>}></Route>
+      <Route path='/:slug' element={<Redirect></Redirect>}></Route>
       <Route path='/Pricing' element={<Price></Price>}></Route>
       <Route path='*' element={<PageError></PageError>}></Route>
 

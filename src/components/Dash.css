@@ -1,13 +1,14 @@
 .dashboard{
     width: 100vw;
     height: 100vh;
+    font-family: 'Ubuntu' sans-serif;
     display: flex;
 }
 .side_bar{
     width: 20%;
     height: 100vh;
     color: white;
-    font-family: sans-serif;
+    font-family: 'Ubuntu' sans-serif;
     display: flex;
     flex-direction: column;
     background-color: rgba(12, 12, 211, 0.778);
@@ -17,20 +18,21 @@ h1{
     padding-top: 2rem;
     border-radius: 10%;
     padding-bottom: 1rem;
-    /* border-bottom: 4px solid white; */
 }
 ol{
     list-style-type: none;
     padding-top: 4rem;
-    font-size: 18px;
+    /* padding-left: 1rem; */
+    font-size: 20px;
 }
 ol a{
     text-decoration: none;
-    margin: 0.4rem;
+    margin: 1.4rem;
     color: #fff;
 }
 .icons{
     margin-right: 1rem;
+    margin-top: 2rem;
 }
 main{
     height: 100vh;
@@ -55,7 +57,7 @@ h2{
 }
 .Trim_inputs{
     width: 300px;
-    padding-left: 2rem;
+    padding: 0rem 2rem;
     height: 40px;
     border: none;
     outline: none;
@@ -77,11 +79,6 @@ h2{
     justify-content: center;
     margin-bottom: 1rem;
 }
-/* .flex2{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-} */
 .trims{
     width: 300px;
     height: 100px;
@@ -100,13 +97,10 @@ h2{
     color: rgba(14, 14, 213, 0.685);
 }
 .email{
-    background-color: blue;
-    width: 350px;
-    color: white;
+    color: blue;
     border: none;
     cursor: pointer;
     font-size: 20px;
-    border-radius: 20px;
     height: 40px;
     margin-top: 6rem;
 }
@@ -115,20 +109,33 @@ h2{
     background-color: blue;
     border: none;
     color: white;
+    cursor: pointer;
     margin-left: 6.4rem;
     margin-top: 1rem;
     border-radius: 10px;
     align-items: center;
     height: 40px;
 }
+.Clip{
+    width: 250px;
+    margin-left: 2rem;
+    margin-top: 2rem;
+    background-color: blue;
+    color: white;
+    font-size: 18px;
+    font-family: 'ubuntu' sans-serif;
+    border-radius: 10px;
+    height: 30px;
+    border: none;
+}
 @media(max-width: 780px){
     .side_bar{
-        width: 100px;
-        background-color: #cfc4c496;
+        width: 90px;
+        background-color: #d8d8d8d0;
     }
     .side_bar ol a{
-        color: rgb(23, 23, 159);
-        padding: 0.7rem;
+        color: rgba(59, 59, 162, 0.796);
+        padding: 0.3rem;
         font-size: 0px;
     }
     .Trim_inputs{

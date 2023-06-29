@@ -4,9 +4,11 @@
 }
 .Qr_inputWrapper{
     width: 100vw;
+    height: 100%;
     align-items: center;
     justify-content: center;
     display: flex;
+    flex-direction: column;
 }
 .Qr_input{
     width: 400px;
@@ -19,13 +21,13 @@
     align-items: center;
 }
 .Qr_inputWrapperBtn{
-    width: 100px;
+    width: 150px;
     border-radius: 10px;
     background-color: blue;
     color: white;
     height: 40px;
     border: none;
-    margin-left: 1rem;
+    margin: 1rem;
     cursor: pointer;
 }
 .Qr_inputWrapperBtn:active{

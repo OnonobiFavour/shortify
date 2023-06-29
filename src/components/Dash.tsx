@@ -1,27 +1,36 @@
 import React, {useState} from 'react'
-import axios from 'axios'
+import firebase from 'firebase/app';
+import CopyToClipboard  from 'react-copy-to-clipboard'
+import db from '../config/config'
+import 'firebase/firestore'
+// import axios from 'axios'
 import './Dash.css'
 import {AiOutlineQrcode} from 'react-icons/ai'
 import {HiOutlineScissors} from 'react-icons/hi'
 import {MdOutlineDomainAdd} from 'react-icons/md'
 import {BiCustomize} from 'react-icons/bi'
 import {RxExit} from 'react-icons/rx'
-
+import tinyid from 'tiny-unique-id';
 
 const Dash = () => {
-  const [longUrl, setLongUrl] = useState('');
-  const [shortUrl, setShortUrl] = useState('');
+    const [originalUrl, setOriginalUrl] = useState('');
+    const [copied, setCopied] = useState(false)
+    const [shortenedUrl, setShortenedUrl] = useState('');
+    const [count, setCount] = useState(0)
+  
+    const handleShorten = async (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault()
+        const slug = tinyid.unique()
+        await db.collection('urls').add({
+            url: originalUrl,
+            slug: slug
+        })
+        setShortenedUrl(`${window.location.origin}/${slug}`)
+    };
 
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-
-    try {
-      const response = await axios.post('http://localhost:3001/shorten', { longUrl });
-      setShortUrl(response.data.shortUrl);
-    } catch (error) {
-      console.log('Error generating short URL:', error);
+    const clickCount = () =>{
+        setCount(count +1)
     }
-};
   return (
     <section className = 'dashboard'>
         <div className="side_bar">
@@ -39,21 +48,17 @@ const Dash = () => {
             <div className="inputs">   
                 <div className="input_wrapper">
 
-                 <form onSubmit={handleSubmit}>
+                 <form onSubmit={handleShorten}>
                     <input
                     type="text" className = 'Trim_inputs'
                     placeholder="Enter a long URL"
-                    value={longUrl}
-                    onChange={(event) => setLongUrl(event.target.value)}
+                    value={originalUrl}
+                    onChange={(event) => setOriginalUrl(event.target.value)}
                     />
                     <button type="submit" className='shorten'>Shorten</button>
                 </form>
                     {/* <input className = 'Trim_inputs' type="text" placeholder="Paste Your Url" /> */}
-                    {shortUrl && (
-                        <div>
-                        <p>Short URL: <a href={shortUrl}>{shortUrl}</a></p>
-                        </div>
-                    )}
+                    
                 </div>
                 <div className="flex">
 
@@ -61,7 +66,7 @@ const Dash = () => {
                         <div className="trims">
                             <p>Your Trims</p>
                             <br />
-                            <h3>0</h3>
+                            <h3>{count}</h3>
                         </div>
                         <div className="trims">
                             <p>QR code Generated</p>
@@ -82,6 +87,15 @@ const Dash = () => {
                             <h3>0</h3>
                         </div>
                     </div>
+                    {shortenedUrl && (
+                        <div className='emails'>
+                            <input type="text" className="Trim_inputs" placeholder='Shortened link' value={shortenedUrl}/>
+                            {/* <p>Short URL: <a href={shortenedUrl}>{shortenedUrl}</a></p> */}
+                            <CopyToClipboard text ={shortenedUrl}>
+                                <button className="Clip" onClick={clickCount} onCopy={() =>setCopied(true)}>Copy to clipboard</button>
+                            </CopyToClipboard>
+                        </div>
+                    )}
                     {/* <button className="email">create</button> */}
                 </div>
             </div>

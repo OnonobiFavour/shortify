@@ -27,7 +27,7 @@ const Home = () => {
         <Nav></Nav>
         <header className="header">
             <div className="text">
-                <h1 className='header_h1'>Optimize Your Online Experinence with Our Advanced <span>URL Shortening</span> solution</h1>
+                <h1 className='header_h1'>Shorten links for <span>Cleaner</span> online presence</h1>
                 <p>Personalize your shortened URLs to align with your board identity. utilize custom slugs branded links, and domain customization option to reinforce your brand presence and enhance user engaement.</p>
 
                 <div className="header-btn">

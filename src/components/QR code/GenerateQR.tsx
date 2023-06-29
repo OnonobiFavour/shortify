@@ -1,49 +1,39 @@
-import React, {ChangeEvent, useState } from 'react'
-import QRCode from 'qrcode.react';
-import './QR.css'
-import axios from 'axios';
-import { EmailAuthCredential } from 'firebase/auth';
+import React, { useState } from 'react';
+import './Qr.css'
+import QRCode from 'qrcode';
 
+function QRCodeGenerator() {
+  const [text, setText] = useState('');
+  const [qrCodeImage, setQRCodeImage] = useState('');
 
-const GenerateQR = () => {
-    const [inputValue, setInputValue] = useState('');
-
-    const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setInputValue(event.target.value);
-  };
-
-
-  const generateQRCode = () => {
-    // Generate the QR code using the inputValue
-    // You can customize the QR code size and other options if needed
-    const qrCodeURL = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(inputValue)}`;
-
-    // Send the email with the QR code as an attachment
-    sendEmail(qrCodeURL);
-  };
-
-  const sendEmail = async (qrCodeURL: string) => {
+  const generateQRCode = async () => {
     try {
-      await axios.post('http://localhost:3001/send-email', {
-        email: EmailAuthCredential, 
-        qrCodeURL: qrCodeURL,
-      });
-
-      // Email sent successfully
-      console.log('Email sent');
+      const imageData = await QRCode.toDataURL(text);
+      setQRCodeImage(imageData);
     } catch (error) {
-      // Error sending email
-      console.error('Error sending email:', error);
+      console.error('Error generating QR code:', error);
     }
-};
+  };
+
   return (
-    <div className='_QR_Code'>
-      <input type="text" value={inputValue} className= 'Qr_input' onChange={handleInputChange} />
-      <button onClick={generateQRCode} className='Generate'>Generate QR Code</button>
-      <br />
-      {inputValue && <QRCode value={inputValue} />}
+    <div className='QR_wrapper'>
+      <div className="Qr_inputWrapper">
+      <h1 className="QR_h1">Place your Shortened Link and generate a Unique QR code</h1>
+        <input
+          type="text"
+          value={text}
+          className='Qr_input'
+          onChange={(e) => setText(e.target.value)}
+          placeholder="Enter text"
+        />
+        <button className='Qr_inputWrapperBtn' onClick={generateQRCode}>Generate QR Code</button>
+        {qrCodeImage && (
+          <img src={qrCodeImage} alt="QR Code" />
+        )}
+
+      </div>
     </div>
-  )
+  );
 }
 
-export default GenerateQR
+export default QRCodeGenerator;
