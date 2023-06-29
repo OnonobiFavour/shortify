@@ -31,9 +31,7 @@ const App: React.FunctionComponent<AppPropps> = (props) => {
         } }></Signup>}>
 
       </Route>
-      <Route path='/login' element={<Login onLogin={function (): void{
-        throw new Error ('Function not implemented')
-       }}></Login>}>
+      <Route path='/login' element={<Login></Login>}>
 
       </Route>
       <Route path='/Dashboard' element={<Dash></Dash>}></Route>

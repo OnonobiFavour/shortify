@@ -1,87 +1,84 @@
-import React, {useEffect, useState } from 'react'
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Signup.css'
-import 'firebase/auth'
-import { getAuth, signInWithEmailAndPassword, UserCredential} from 'firebase/auth';
-import {initializeApp} from 'firebase/app';
+import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
+import { initializeApp } from 'firebase/app';
 import { config } from '../config/config';
 
 initializeApp(config.firebaseConfig);
 
-interface LoginProps {
-  onLogin: () => void;
-}
-
-const Login: React.FC<LoginProps> = ({onLogin}) => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('')
+const Login = () => {
   const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
-  const [text, setText] = useState('confirm')
-  // const [loadstate, setLoadstate] = useState(false);
-  const Navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
-  // useEffect(() => {
-  //   // setLoadstate(true)
-  //   const auth = getAuth();
-  //   const unsubscribe = onAuthStateChanged(auth, (user) => {
-      
-      
-  //     if (user) {
-  //       // User is logged in and verified
-  //       setErrorMessage('');
-  //     }
-  //   });
-
-  //   return () => unsubscribe();
-  // }, []);
-
-
-  const handleLogin = async (event: React.FormEvent<HTMLFormElement>)=>{
+  const handleLogin = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    setLoading(true);
 
-    try{
-      const auth = getAuth()
-      setText('processing')
-      const userCredential: UserCredential = await signInWithEmailAndPassword(auth, email, password);
+    try {
+      const auth = getAuth();
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
 
-        if (user && user.emailVerified) {
-          alert(`Hey ${user.email}, you are logged in!`);
-          onLogin();
-          Navigate('/dashboard'); // Navigate to the dashboard
-        } else {
-          setErrorMessage('Your account is not verified. Please verify your email.');
-        }
-
-    } catch(error){
-      setErrorMessage('Invalid Email or password. Please try again')
-      setText("confirm")
+      if (user && user.emailVerified) {
+        alert(`Hey ${user.email}, you are logged in!`);
+        navigate('/dashboard');
+      } else {
+        setErrorMessage('Your account is not verified. Please verify your email.');
+        setLoading(false);
+      }
+    } catch (error) {
+      setErrorMessage('Invalid email or password. Please try again.');
+      setLoading(false);
       console.error(error);
     }
-  }
-  
+  };
 
-  const handleclick = ()=>{
-    Navigate('/SignUP')
-  }
+  const handleSignupClick = () => {
+    navigate('/signup');
+  };
+
   return (
     <main className="section">
       <div className="signup-box">
-            <h2>Welcome Back!!</h2>
+        <h2>Welcome Back!!</h2>
 
-            <form onSubmit={handleLogin} >
-                <input type="text" className = 'input' placeholder='name' value={username} onChange={(event)=>setUsername(event.target.value)} />
-                <input type="password" className = 'input'value={password} onChange={(event)=> setPassword(event.target.value)} placeholder='password' />
-                <input type = 'email' className = 'input' value={email} onChange={(event)=> setEmail(event.target.value)} placeholder='email or phone'/>
-                
-                {errorMessage && <p className="error-message">{errorMessage}</p>}
-                <input type="submit" value={text} className = 'input' />
-            </form>
-        </div>
-        <p>Not a member? <button className='login2' onClick={handleclick}>create an account </button></p>
+        <form onSubmit={handleLogin}>
+          <input
+            type="email"
+            className="input"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+          <input
+            type="password"
+            className="input"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+
+          {errorMessage && <p className="error-message">{errorMessage}</p>}
+
+          <button type="submit" className="input" disabled={loading}>
+            {loading ? 'Logging in...' : 'Log In'}
+          </button>
+        </form>
+      </div>
+
+      <p>
+        Not a member?{' '}
+        <button className="login2" onClick={handleSignupClick}>
+          Create an Account
+        </button>
+      </p>
     </main>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;
