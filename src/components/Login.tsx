@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
+import { getAuth, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { initializeApp } from 'firebase/app';
 import { config } from '../config/config';
 
@@ -32,6 +32,26 @@ const Login = () => {
     } catch (error) {
       setErrorMessage('Invalid email or password. Please try again.');
       setLoading(false);
+      console.error(error);
+    }
+  };
+
+  const handleGoogleLogin = async () => {
+    const auth = getAuth();
+    const provider = new GoogleAuthProvider();
+
+    try {
+      const userCredential = await signInWithPopup(auth, provider);
+      const user = userCredential.user;
+
+      if (user && user.emailVerified) {
+        alert(`Hey ${user.email}, you are logged in!`);
+        navigate('/dashboard');
+      } else {
+        setErrorMessage('Your account is not verified. Please verify your email.');
+      }
+    } catch (error) {
+      setErrorMessage('Failed to sign in with Google. Please try again.');
       console.error(error);
     }
   };
@@ -69,6 +89,9 @@ const Login = () => {
             {loading ? 'Logging in...' : 'Log In'}
           </button>
         </form>
+        <button className="google-login-button" onClick={handleGoogleLogin}>
+          Log in with Google
+        </button>
       </div>
 
       <p>

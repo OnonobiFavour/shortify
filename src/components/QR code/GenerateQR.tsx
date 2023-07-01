@@ -24,7 +24,7 @@ function QRCodeGenerator() {
           value={text}
           className='Qr_input'
           onChange={(e) => setText(e.target.value)}
-          placeholder="Enter text"
+          placeholder="Enter URL"
         />
         <button className='Qr_inputWrapperBtn' onClick={generateQRCode}>Generate QR Code</button>
         {qrCodeImage && (

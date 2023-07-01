@@ -1,7 +1,7 @@
 import { useNavigate} from 'react-router-dom'
 import { initializeApp} from 'firebase/app';
 import "firebase/auth";
-import {getAuth, createUserWithEmailAndPassword, AuthErrorCodes} from 'firebase/auth'
+import {getAuth, createUserWithEmailAndPassword, AuthErrorCodes,signInWithPopup, GoogleAuthProvider } from 'firebase/auth'
 import './Signup.css'
 import 'firebase/auth'
 import { config } from '../config/config';
@@ -43,13 +43,30 @@ const Signup: React.FC<SignupProps> = ({onSignUP}) => {
                     console.error(`An Error occured: ${error}`)
                 }
             }
-          } else {
+        } else {
             // Passwords do not match
             setPasswordMatch(false);
-          }
-
-        
+        }
     };
+
+    const handleGoogleSignup = async () => {
+        try {
+          const auth = getAuth();
+          const provider = new GoogleAuthProvider();
+    
+          const userCredential = await signInWithPopup(auth, provider);
+          const user = userCredential.user;
+    
+          if (user) {
+            console.log('Sign-up with Google successful!');
+            navigate('/dashboard');
+          }
+        } catch (error) {
+          setError('An error occurred during sign-up with Google.');
+          console.error(error);
+        }
+    };
+
     const Navigate = useNavigate();
     const handleclick = ()=>{
         Navigate('/login')
@@ -72,6 +89,9 @@ const Signup: React.FC<SignupProps> = ({onSignUP}) => {
                 {!passwordMatch && <p className='err'>Passwords do not match!</p>}
                 {error && <p className='err'>{error}</p>}
                 <input type="submit" className = 'confirm' value="Confirm"/>
+                <button className="google-signup" onClick={handleGoogleSignup}>
+                    Sign Up with Google
+                </button>
                     
             </form>
         </main>
