@@ -37,7 +37,7 @@ const Dash = () => {
           <h1>Dashboard</h1>
             <ul>
                 <ol><a href="#"><HiOutlineScissors className='icons' size={30}></HiOutlineScissors>Trim Url</a></ol>
-                <ol><a href="/QRgeneration"><AiOutlineQrcode className='icons' size={30}></AiOutlineQrcode>Create QR</a></ol>
+                <ol><Link to = {'/QRgeneration'}>Pricing<AiOutlineQrcode className='icons' size={30}></AiOutlineQrcode>Create QR</Link></ol>
                 <ol><a href="#"><BiCustomize className='icons' size={30}></BiCustomize>Custom Url</a></ol>
                 <ol><a href="/Pricing"><MdOutlineDomainAdd className = 'icons' size={30}></MdOutlineDomainAdd>Domain</a></ol>
                 <ol><a href="/"><RxExit className = 'icons' size={30}></RxExit>Exit</a></ol>
