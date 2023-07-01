@@ -41,7 +41,7 @@ const App: React.FunctionComponent<AppPropps> = (props) => {
       <Route path='*' element={<PageError></PageError>}></Route>
 
       {/* Qr Route */}
-      <Route path='/QR_generation' element={<Qr></Qr>}></Route>
+      <Route path='/QRgeneration' element={<Qr></Qr>}></Route>
     </Routes>
     
      </Router>
