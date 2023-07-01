@@ -2,7 +2,7 @@
     width: 100vw;
     height: 100vh;
     font-family: 'Ubuntu' sans-serif;
-    background-color: rgba(240, 230, 230, 0.701);
+    background-color: rgba(221, 212, 212, 0.701);
     display: flex;
 }
 .side_bar{
@@ -129,15 +129,18 @@ h2{
     height: 30px;
     border: none;
 }
-@media(max-width: 780px){
+@media(max-width: 600px){
     .side_bar{
-        width: 70px;
+        width: 15%;
         background-color: #d8d8d8d0;
+    }
+    .side_bar ol{
+        margin-right: 2rem;
     }
     .side_bar ol a{
         color: rgba(59, 59, 162, 0.796);
         /* padding: 0.3rem; */
-        margin-right: 1rem;
+        /* margin-right: 2rem; */
         font-size: 0px;
     }
     .Trim_inputs{
