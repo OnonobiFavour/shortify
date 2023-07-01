@@ -89,14 +89,15 @@ const Signup: React.FC<SignupProps> = ({onSignUP}) => {
                 {!passwordMatch && <p className='err'>Passwords do not match!</p>}
                 {error && <p className='err'>{error}</p>}
                 <input type="submit" className = 'confirm' value="Confirm"/>
-                <button className="google-signup" onClick={handleGoogleSignup}>
-                    Sign Up with Google
-                </button>
                     
             </form>
+            <p className='oldAcc'>Already have an account? <button className='login2' onClick={handleclick}>login</button></p>
         </main>
         
-        <p className='oldAcc'>Already have an account? <button className='login2' onClick={handleclick}>login</button></p>
+         <button className="google-login-button" onClick={handleGoogleSignup}>
+            Sign Up with Google
+        </button>
+        
 
         
     </section>
