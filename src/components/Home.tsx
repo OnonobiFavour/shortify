@@ -55,7 +55,7 @@ const Home = () => {
                 <div className="box1" >
                     <BiMessageAltEdit className = 'icon1' size={10}></BiMessageAltEdit>
                     <h4>Custom URL</h4>
-                    <p>Shortify allows you to customize the shortened link with your own branding or keywords.This can help your link more memorable and helping you build your brand.</p>
+                    <p>Shortify allows you to customize the shortened link with your own branding or keywords.This can help your link more memorable and helping you build your brand. But this feature will be enabled soon.</p>
                 </div>
             </div>
 
@@ -78,6 +78,9 @@ const Home = () => {
             </div>
         </div>
 
+        <div className="analysis">
+            <h1>Over 4000 active users on Shortify</h1>
+        </div>
 
         <h1 className='pricingH1'>Choose <span>Pricing</span></h1>
         <div className="Price_tags">

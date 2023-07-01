@@ -1,8 +1,10 @@
 .footer{
     width: 100%;
-    height: 200px;
+    height: 300px;
     background-color: black;
     color: white;
+    display: flex;
+    flex-direction: column;
     padding-top: 1rem;
     text-align: center;
     margin-top: 5%;
@@ -14,12 +16,19 @@
     justify-content: center;
     padding: 2rem;
 }
-/* .footer ul{
+.footer ul{
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     color: white;
-} */
+}
+.footer ul li{
+    padding-left: 3rem;
+    list-style-type: none;
+    padding-top: 2rem;
+    font-size: 20px;
+    cursor: pointer;
+}
 @media(max-width: 780px){
     .footer{
         margin-top: 70%;
