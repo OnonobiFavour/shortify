@@ -1,7 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom'
 import {CiMenuFries} from 'react-icons/ci'
 import { useState } from 'react'
-import {TiTimesOutline} from 'react-icons/ti'
+import {FaTimes} from 'react-icons/fa'
 import './Nav.css'
 
 const Nav = () => {
@@ -30,7 +30,7 @@ const Nav = () => {
           </div>
         </div>
           <button className='toggle' onClick={menuClick}>
-            {menu ? <TiTimesOutline className='fatimes' size={40}></TiTimesOutline> : <CiMenuFries size={30}></CiMenuFries>}
+            {menu ? <FaTimes className='fatimes' size={40}></FaTimes> : <CiMenuFries size={30}></CiMenuFries>}
         </button> 
     </div>
   )
