@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import { getAuth, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { initializeApp } from 'firebase/app';
 import { config } from '../config/config';
-import {FcGoogle} from 'react-icons/fc'
 
 initializeApp(config.firebaseConfig);
 
@@ -91,8 +90,7 @@ const Login = () => {
           </button>
         </form>
         <button className="google-login-button" onClick={handleGoogleLogin}>
-          <FcGoogle size={30}></FcGoogle>
-          <p>Log in with Google</p>  
+          Log in with Google 
         </button>
       </div>
 
