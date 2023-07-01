@@ -21,9 +21,10 @@ const App: React.FunctionComponent<AppPropps> = (props) => {
     <Router>
         <Routes>
         <Route path='/' element={
-       <AuthRoute>
+      //  <AuthRoute>
         <Home></Home>
-        </AuthRoute>}>
+        // </AuthRoute>
+        }>
       </Route>
 
       <Route path='/signup' element={<Signup onSignUP={function (): void {

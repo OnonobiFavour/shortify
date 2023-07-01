@@ -8,6 +8,11 @@ const Footer = () => {
     <div className='footer'>
         <p>Copyright: {new Date().getFullYear()}</p>
         <div className="socials">
+          <ul>
+            <li>contact</li>
+            <li>Private policy</li>
+            <li>About</li>
+          </ul>
             <FaFacebook href='' className='icons' size={40}></FaFacebook>
             <FaTwitter className='icons' size={40}></FaTwitter>
             <FaLinkedin className='icons' size={40}></FaLinkedin>
