@@ -72,7 +72,7 @@ const Home = () => {
                 </div>
                 <div className="box1">
                     <AiOutlineQrcode className = 'icon1' size={10}></AiOutlineQrcode>
-                    <h4>QR code</h4>
+                    <h4>Services</h4>
                     <p>Shortify allows you to shorten URLs of your business, events. Shorten your URL at scale, URL redirect</p>
                 </div>
             </div>
