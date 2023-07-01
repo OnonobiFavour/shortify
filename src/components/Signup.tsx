@@ -71,9 +71,7 @@ const Signup: React.FC<SignupProps> = ({onSignUP}) => {
     const handleclick = ()=>{
         Navigate('/login')
     }
-    // const dashboard=()=>{
-    //     Navigate('/Dashboard')
-    // }
+   
   return (
     <section className='section'>
         <main className="signup-box">
@@ -83,7 +81,7 @@ const Signup: React.FC<SignupProps> = ({onSignUP}) => {
                 <input type="text" className = 'input' placeholder='name' />
                 <input type="password" className = 'input' placeholder='password' value={password} onChange={(event)=> setPassword(event.target.value)}/>
                 <input type="password" className = 'input' placeholder='confirm password' value={confirmPassword} onChange={(event)=> setConfirmPassword(event.target.value)} />
-                <input type = 'email' className = 'input' value={email} onChange={(event)=>setEmail(event.target.value)} placeholder='email or phone'/>
+                <input type = 'email' className = 'input' value={email} onChange={(event)=>setEmail(event.target.value)} placeholder='Email'/>
 
 
                 {!passwordMatch && <p className='err'>Passwords do not match!</p>}
@@ -94,7 +92,7 @@ const Signup: React.FC<SignupProps> = ({onSignUP}) => {
             <p className='oldAcc'>Already have an account? <button className='login2' onClick={handleclick}>login</button></p>
         </main>
         
-         <button className="google-login-button" onClick={handleGoogleSignup}>
+        <button className="google-login-button" onClick={handleGoogleSignup}>
             Sign Up with Google
         </button>
         

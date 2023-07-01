@@ -19,9 +19,7 @@
 .google-login-button{
     padding: 1rem;  
     margin-top: 2rem;
-    text-align: center;
     cursor: pointer;
-    /* background-color: inherit; */
     border: none;
 }
 .google-login-button p{
@@ -47,10 +45,11 @@ input[ type = 'submit']{
     background-color: blue;
     color: white;
     cursor: pointer;
+    border: none;
+    font-size: 18px;
     text-align: center;
     height: 40px;
     margin-bottom: 1rem;
-    border-radius: 10px;
 }
 input[ type = 'button']:active{
     background-color: rgba(18, 18, 203, 0.351);
@@ -60,6 +59,13 @@ input[ type = 'button']:active{
     color: blue;
     cursor: pointer;
     border: none;
+}
+.Login_input{
+    background-color: blue;
+    height: 40px;
+    font-size: 18px;
+    border: none;
+    color: white;
 }
 .err{
     padding-bottom: 1rem;

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getAuth, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { initializeApp } from 'firebase/app';
+import './Signup.css'
 import { config } from '../config/config';
 
 initializeApp(config.firebaseConfig);
@@ -85,7 +86,7 @@ const Login = () => {
 
           {errorMessage && <p className="error-message">{errorMessage}</p>}
 
-          <button type="submit" className="input" disabled={loading}>
+          <button type="submit" className="Login_input" disabled={loading}>
             {loading ? 'Logging in...' : 'Log In'}
           </button>
         </form>
@@ -94,7 +95,7 @@ const Login = () => {
         </button>
       </div>
 
-      <p>
+      <p className='oldAcc'>
         Not a member?{' '}
         <button className="login2" onClick={handleSignupClick}>
           Create an Account
