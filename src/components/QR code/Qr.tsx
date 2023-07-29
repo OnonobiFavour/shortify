@@ -1,4 +1,3 @@
-import React from 'react'
 import GenerateQR from './GenerateQR'
 import './QR.css'
 
