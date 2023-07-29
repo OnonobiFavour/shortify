@@ -1,5 +1,5 @@
 import GenerateQR from './GenerateQR'
-import './QR.css'
+import './Qr.css'
 
 const Qr = () => {
   return (
