@@ -92,7 +92,7 @@ const Signup: React.FC<SignupProps> = ({onSignUP}) => {
             <p className='oldAcc'>Already have an account? <button className='login2' onClick={handleclick}>login</button></p>
         </main>
         
-        <button className="google-login-button" onClick={handleGoogleSignup}>
+        <button className="google-signin-button" onClick={handleGoogleSignup}>
             Sign Up with Google
         </button>
         
