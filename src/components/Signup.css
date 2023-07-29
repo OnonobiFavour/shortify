@@ -16,11 +16,17 @@
     margin-bottom: 2rem;
     place-items: center;
 }
+.google-signin-button{
+    width: 300px;
+    height: 40px;
+    cursor: pointer;
+    margin-top: 2rem;
+}
 .google-login-button{
-    padding: 1rem;  
+    width: 300px;
+    height: 40px;
     margin-top: 2rem;
     cursor: pointer;
-    border: none;
 }
 .google-login-button p{
     padding-bottom: 1rem;
