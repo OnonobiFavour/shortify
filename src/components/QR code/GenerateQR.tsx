@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Qr.css';
+// import './Qr.css';
 import QRCode from 'qrcode';
 
 function QRCodeGenerator() {
