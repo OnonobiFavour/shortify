@@ -1,10 +1,11 @@
 import { useNavigate} from 'react-router-dom'
 import { initializeApp} from 'firebase/app';
 import "firebase/auth";
-import {getAuth, createUserWithEmailAndPassword, AuthErrorCodes,signInWithPopup, GoogleAuthProvider } from 'firebase/auth'
+import {getAuth, createUserWithEmailAndPassword, AuthErrorCodes, signInWithRedirect, GoogleAuthProvider } from 'firebase/auth'
 import './Signup.css'
 import 'firebase/auth'
 import { config } from '../config/config';
+import { UserCredential } from 'firebase/auth';
 import React, { useState } from 'react';
 
 
@@ -34,7 +35,6 @@ const Signup: React.FC<SignupProps> = ({onSignUP}) => {
                 navigate("/dashboard");
                 onSignUP();
             } catch(error){
-                // const errorCode = error as FirebaseError;
                 const errorCode = (error as { code: string }).code;
     
                 if(errorCode === AuthErrorCodes.EMAIL_EXISTS){
@@ -54,19 +54,17 @@ const Signup: React.FC<SignupProps> = ({onSignUP}) => {
           const auth = getAuth();
           const provider = new GoogleAuthProvider();
     
-          const userCredential = await signInWithPopup(auth, provider);
-          const user = userCredential.user;
+          await signInWithRedirect(auth, provider);
+          // Note: The redirection to Google sign-in page will happen automatically after this call.
     
-          if (user) {
-            console.log('Sign-up with Google successful!');
-            navigate('/dashboard');
-        }
+    
         } catch (error) {
           setError('An error occurred during sign-up with Google.');
           console.error(error);
         }
-    };
-
+      };
+    
+    
     const Navigate = useNavigate();
     const handleclick = ()=>{
         Navigate('/login')
