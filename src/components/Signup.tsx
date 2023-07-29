@@ -10,7 +10,7 @@ import React, { useState } from 'react';
 
 initializeApp(config.firebaseConfig);
 
-interface SignupProps {
+interface SignupProps { 
     onSignUP: () => void;
 }
 const Signup: React.FC<SignupProps> = ({onSignUP}) => {
@@ -60,7 +60,7 @@ const Signup: React.FC<SignupProps> = ({onSignUP}) => {
           if (user) {
             console.log('Sign-up with Google successful!');
             navigate('/dashboard');
-          }
+        }
         } catch (error) {
           setError('An error occurred during sign-up with Google.');
           console.error(error);
